@@ -4,16 +4,17 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from './reducers';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
     componentWillMount() {
         const config = {
-            apiKey: "AIzaSyCn49Yh8eUJ0YWj_kcX_Bscsne1ygvr5oU",
-            authDomain: "manager-b4dbb.firebaseapp.com",
-            databaseURL: "https://manager-b4dbb.firebaseio.com",
-            projectId: "manager-b4dbb",
-            storageBucket: "",
-            messagingSenderId: "354689771078"
+            apiKey: 'AIzaSyCn49Yh8eUJ0YWj_kcX_Bscsne1ygvr5oU',
+            authDomain: 'manager-b4dbb.firebaseapp.com',
+            databaseURL: 'https://manager-b4dbb.firebaseio.com',
+            projectId: 'manager-b4dbb',
+            storageBucket: '',
+            messagingSenderId: '354689771078'
         };
         firebase.initializeApp(config);
     }
@@ -21,11 +22,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={createStore(reducers)}>
-                <View>
-                    <Text>
-                        Hello!!!
-                    </Text>
-                </View>
+                <LoginForm />
             </Provider>
         );
     }
